@@ -7,9 +7,7 @@ package src;
  *
  */
 public class main {
-	int waterInventory = 200;
-	int coffeeInventory = 50;
-	int milkInventory = 15;
+
 
 	public static void main(String[] args) {
 		//Stage 1
@@ -67,18 +65,25 @@ public class main {
 	}
 
 	public static void ableToMakeCoffee(int cups){
-		int waterInventory = 200;
-		int coffeeInventory = 50;
-		int milkInventory = 15;
+		int waterInventory = 400;
+		int beanInventory = 15;
+		int milkInventory = 50;
+		int cupsMade = 0;
 
-		boolean waterInventoryLeft = (waterInventory - getWater(cups) >= 0) ? true:false;
+		boolean waterInventoryLeft = (waterInventory - getWater(cupsMade) >= 0) ? true:false;
+		boolean milkInventoryLeft = (milkInventory - getMilk(cupsMade) >= 0) ? true:false;
+		boolean beansInventoryLeft = (beanInventory - getBeans(cupsMade) >= 0) ? true:false;
 
 
-		if(waterInventoryLeft){
+		while(waterInventoryLeft && milkInventoryLeft && beansInventoryLeft){
 			System.out.println(true);
-		}else{
-			System.out.println(false);
+			cupsMade ++;
+			waterInventoryLeft = (waterInventory - getWater(cupsMade) >= 0) ? true:false;
+			milkInventoryLeft = (milkInventory - getMilk(cupsMade) >= 0) ? true:false;
+			beansInventoryLeft = (beanInventory - getBeans(cupsMade) >= 0) ? true:false;
+
 		}
+		System.out.println(cupsMade - 1);
 
 	}
 }
