@@ -95,7 +95,7 @@ public class CoffeeMachine {
 
 
 	public void canMake(){
-		while(this.waterInventoryLeft && this.milkInventoryLeft && this.beansInventoryLeft && disposableCupsLeft ){
+		while(this.waterInventoryLeft && this.milkInventoryLeft && this.beansInventoryLeft && disposableCupsLeft && cupsMade <= cupsToMake){
 			this.cupsMade ++;
 			this.waterInventoryLeft = (this.waterInventory - getWater(this.cupsMade) >= 0) ? true:false;
 			this.milkInventoryLeft = (this.milkInventory - getMilk(this.cupsMade) >= 0) ? true:false;
