@@ -17,7 +17,7 @@ public class main {
 //		coffeeDrinksIngredianeNeeded(25);
 
 		//Stage 3
-		ableToMakeCoffee(1);
+		ableToMakeCoffee(3);
 	}
 
 	/**
@@ -70,20 +70,27 @@ public class main {
 		int milkInventory = 50;
 		int cupsMade = 0;
 
-		boolean waterInventoryLeft = (waterInventory - getWater(cupsMade) >= 0) ? true:false;
-		boolean milkInventoryLeft = (milkInventory - getMilk(cupsMade) >= 0) ? true:false;
-		boolean beansInventoryLeft = (beanInventory - getBeans(cupsMade) >= 0) ? true:false;
+
+		boolean waterInventoryLeft = true;
+		boolean milkInventoryLeft = true;
+		boolean beansInventoryLeft = true;
 
 
 		while(waterInventoryLeft && milkInventoryLeft && beansInventoryLeft){
-			System.out.println(true);
 			cupsMade ++;
 			waterInventoryLeft = (waterInventory - getWater(cupsMade) >= 0) ? true:false;
 			milkInventoryLeft = (milkInventory - getMilk(cupsMade) >= 0) ? true:false;
 			beansInventoryLeft = (beanInventory - getBeans(cupsMade) >= 0) ? true:false;
 
 		}
-		System.out.println(cupsMade - 1);
+		//System.out.println(cupsMade -= 1);
+		if(cupsMade < cups ){
+			System.out.println("No, I can make only "+ cupsMade +" cups of coffee");
+		}else{
+			System.out.println("Yes, I can make that amount of coffee");
+		}
+
+
 
 	}
 }
