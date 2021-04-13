@@ -45,7 +45,7 @@ public class CoffeeMachine {
 				break;
 			case 2:
 				// latte, water = 350 ml , milk 75 ml,  beans = 20 g, costs $7
-				this.waterNeeded = 350;
+				waterNeeded = 350;
 				beansNeeded = 20;
 				milkNeeded = 75;
 				cost = 7;
@@ -68,7 +68,6 @@ public class CoffeeMachine {
 				System.out.println("Coffee");
 		}
 
-
 	}
 
 
@@ -83,15 +82,22 @@ public class CoffeeMachine {
 		return cups * beansNeeded;
 	}
 
+	// Set ingrediance Inventory
+	public  void setWaterInventory(int cupsMade ){
+		 this.waterInventory -= getWater(cupsMade);
+	}
+	public  void setMilkInventory(int cupsMade){
+		this.milkInventory -= getMilk(cupsMade);
+	}
+	public  void setBeansInventory(int cupsMade){
+		this.beanInventory -= getBeans(cupsMade);
+	}
+
 
 	public void canMake(){
 		while(this.waterInventoryLeft && this.milkInventoryLeft && this.beansInventoryLeft && disposableCupsLeft ){
 			this.cupsMade ++;
 			this.waterInventoryLeft = (this.waterInventory - getWater(this.cupsMade) >= 0) ? true:false;
-//			System.out.println("Water inventory "+  milkInventory);
-//			System.out.println("Water inventory - "+  getMilk(this.cupsMade));
-//			System.out.println("Water needed "+ this.milkNeeded);
-//			System.out.println("Cups of coffee " + cupsMade);
 			this.milkInventoryLeft = (this.milkInventory - getMilk(this.cupsMade) >= 0) ? true:false;
 			this.beansInventoryLeft = (this.beanInventory - getBeans(this.cupsMade) >= 0) ? true:false;
 			disposableCupsLeft = (disposableCups - cupsMade >= 0) ? true:false;
@@ -101,9 +107,9 @@ public class CoffeeMachine {
 			System.out.println("No, I can make only "+ cupsMade +" cups of coffee");
 		}else{
 			//set inventory
-			waterInventory -= getWater(this.cupsMade);
-			milkInventory -= getMilk(this.cupsMade);
-			beanInventory -= getBeans(this.cupsMade);
+			setWaterInventory(cupsMade);
+			setMilkInventory(cupsMade);
+			setBeansInventory(cupsMade);
 			System.out.println("Yes, I can make that amount of coffee " + cupsMade + "\nWater inventory" +
 					" " + waterInventory);
 			System.out.println("Milk inventory " + milkInventory);
