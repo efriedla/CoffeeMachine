@@ -17,7 +17,7 @@ The machine can make three types of coffee: espresso, cappuccino, and latte.
 
 Since nothing’s for free, it also collects the money.
 
-###Result
+### Result
 This project allows you to get a taste of Java. An important part of Java are classes, and this is what you will practice here.
 
 Try yourself at working with loops and conditions and get more confident in Java programming.
@@ -27,7 +27,7 @@ https://imgur.com/BuD259h
 Stage #1: Hello, coffee!
 Write a program that puts basic information on the screen: Give the machine a chance to tell the customers what it’s doing!
 
-###Description:
+### Description:
 
 Let's start with a program that makes you a coffee – virtual coffee, of course.
 
