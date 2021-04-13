@@ -17,7 +17,10 @@ public class main {
 //		coffeeDrinksIngredianeNeeded(25);
 
 		//Stage 3
-		ableToMakeCoffee(3);
+//		ableToMakeCoffee(3);
+
+		//stage 3.5
+		CoffeeMachine order1 = new CoffeeMachine(2);
 	}
 
 	/**
