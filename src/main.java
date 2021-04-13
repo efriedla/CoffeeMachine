@@ -7,13 +7,19 @@ package src;
  *
  */
 public class main {
+	int waterInventory = 200;
+	int coffeeInventory = 50;
+	int milkInventory = 15;
 
 	public static void main(String[] args) {
 		//Stage 1
 		//coffeeProcess();
 
 		//Stage 2
-		coffeeDrinksIngredianeNeeded(25);
+//		coffeeDrinksIngredianeNeeded(25);
+
+		//Stage 3
+		ableToMakeCoffee(1);
 	}
 
 	/**
@@ -48,6 +54,31 @@ public class main {
 		System.out.println("Milk needed " + cups * coffeeMilkNeeded);
 		System.out.println("Water needed " + cups * coffeeWaterNeeded);
 		System.out.println("Beans needed " + cups * coffeeBeansNeeded);
+
+	}
+	public static int getWater(int cups){
+		return cups * 200;
+	}
+	public static int getMilk(int cups){
+		return cups * 50;
+	}
+	public static int getBeans(int cups){
+		return cups * 15;
+	}
+
+	public static void ableToMakeCoffee(int cups){
+		int waterInventory = 200;
+		int coffeeInventory = 50;
+		int milkInventory = 15;
+
+		boolean waterInventoryLeft = (waterInventory - getWater(cups) >= 0) ? true:false;
+
+
+		if(waterInventoryLeft){
+			System.out.println(true);
+		}else{
+			System.out.println(false);
+		}
 
 	}
 }
