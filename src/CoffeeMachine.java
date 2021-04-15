@@ -41,6 +41,7 @@ public class CoffeeMachine {
 				beansNeeded = 16;
 				milkNeeded = 0;
 				cost = 4;
+				this.coffeeType = coffeeType;
 				System.out.println("Espresso");
 				break;
 			case 2:
@@ -49,6 +50,7 @@ public class CoffeeMachine {
 				beansNeeded = 20;
 				milkNeeded = 75;
 				cost = 7;
+				this.coffeeType = coffeeType;
 				System.out.println("Latte");
 				break;
 			case 3:
@@ -57,6 +59,7 @@ public class CoffeeMachine {
 				beansNeeded = 12;
 				milkNeeded = 100;
 				cost = 6;
+				this.coffeeType = coffeeType;
 				System.out.println("Cappuccino");
 				break;
 			default:
@@ -65,6 +68,7 @@ public class CoffeeMachine {
 				beansNeeded = 15;
 				milkNeeded = 50;
 				cost = 1;
+				this.coffeeType = coffeeType;
 				System.out.println("Coffee");
 		}
 
